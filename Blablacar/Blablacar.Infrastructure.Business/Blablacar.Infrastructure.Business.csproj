@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blablacar.Domain.Core\Blablacar.Domain.Core.csproj" />
+    <ProjectReference Include="..\Blablacar.Domain.Interfaces\Blablacar.Domain.Interfaces.csproj" />
+    <ProjectReference Include="..\Blablacar.Infrastructure.Data\Blablacar.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\Blablacar.Services.Interfaces\Blablacar.Services.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
