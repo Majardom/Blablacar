@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Blablacar.Domain.Core;
 
-namespace Blablacar.Infrastructure.Business.AutoMapperProfile
+namespace Blablacar.Infrastructure.Data
 {
     public class BusinessProfile : Profile
     {

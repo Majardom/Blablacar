@@ -5,10 +5,10 @@ namespace Blablacar.Services.Interfaces
 {
     public interface ITripService
     {
-        void OrderTrip(int tripId, CustomerDto customer);
+        void OrderTrip(int tripId, Customer customer);
 
-        void CreateTrip(TripDto trip);
+        void CreateTrip(Trip trip);
 
-        IEnumerable<TripDto> GetTrips();
+        IEnumerable<Trip> GetTrips();
     }
 }

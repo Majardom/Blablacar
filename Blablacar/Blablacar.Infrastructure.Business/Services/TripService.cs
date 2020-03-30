@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Blablacar.Domain.Core;
 using Blablacar.Domain.Interfaces;
+using Blablacar.Infrastructure.Data;
 using Blablacar.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace Blablacar.Infrastructure.Business
     {
         #region Constructors 
 
-        public TripService(IUnitOfWork unitOfWork, IMapper mapper)
+        public TripService(IUnitOfWork<DriverDto, CustomerDto, TripDto> unitOfWork, IMapper mapper)
             :base(unitOfWork, mapper)
         { }
 
@@ -20,17 +21,17 @@ namespace Blablacar.Infrastructure.Business
 
         #region ITripService
 
-        public void OrderTrip(int tripId, CustomerDto customer)
+        public void OrderTrip(int tripId, Customer customer)
         {
             var trip = UnitOfWork.Trips.Get(tripId).CheckForNull();
 
-            trip.Customer = customer;
+            trip.WithCustomer(customer);
 
             UnitOfWork.Trips.Update(trip);
             UnitOfWork.SaveChanges();
         }
 
-        public void CreateTrip(TripDto trip)
+        public void CreateTrip(Trip trip)
         {
             var dbTrip = UnitOfWork.Trips.GetAll().FirstOrDefault(x => x.Id == trip.Id);
 
@@ -47,7 +48,7 @@ namespace Blablacar.Infrastructure.Business
             UnitOfWork.SaveChanges();
         }
 
-        public IEnumerable<TripDto> GetTrips()
+        public IEnumerable<Trip> GetTrips()
         {
             return UnitOfWork.Trips.GetAll();
         }

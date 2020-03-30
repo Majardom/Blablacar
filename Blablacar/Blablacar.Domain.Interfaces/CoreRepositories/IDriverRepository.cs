@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace Blablacar.Domain.Interfaces
 {
-    public interface IDriverRepository : IGenericRepository<DriverDto>
+    public interface IDriverRepository<TDto> : IGenericRepository<Driver, TDto>
     {
-        IEnumerable<DriverDto> GetDrivers(Gender gender);
+        IEnumerable<Driver> GetDrivers(Gender gender);
     }
 }

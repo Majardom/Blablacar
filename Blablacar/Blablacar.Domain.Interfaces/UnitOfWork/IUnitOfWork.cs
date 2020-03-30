@@ -2,13 +2,13 @@
 
 namespace Blablacar.Domain.Interfaces
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork<TDriversDto, TCustomersDto, TTripsDto> : IDisposable
     {
-        IDriverRepository Drivers { get; }
+        IDriverRepository<TDriversDto> Drivers { get; }
 
-        ICustomerRepository Customers { get; }
+        ICustomerRepository<TCustomersDto> Customers { get; }
 
-        ITripRepository Trips { get; }
+        ITripRepository<TTripsDto> Trips { get; }
 
         void SaveChanges();
     }

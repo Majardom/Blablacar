@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Blablacar.Domain.Core
+namespace Blablacar.Infrastructure.Data
 {
-    public class TripDto : BaseObject
+    public class TripDto : BaseObjectDto
     {
         public string From { get; set; }
 

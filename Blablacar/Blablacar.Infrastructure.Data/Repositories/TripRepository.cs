@@ -1,4 +1,5 @@
-﻿using Blablacar.Domain.Core;
+﻿using AutoMapper;
+using Blablacar.Domain.Core;
 using Blablacar.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -6,22 +7,22 @@ using System.Linq;
 
 namespace Blablacar.Infrastructure.Data
 {
-    public class TripRepository : GenericRepository<TripDto>, ITripRepository
+    public class TripRepository : GenericRepository<Trip, TripDto>, ITripRepository<TripDto>
     {
         #region Constructors 
 
-        public TripRepository(BlablacarDbContext context)
-            :base(context)
+        public TripRepository(BlablacarDbContext context, IMapper mapper)
+            :base(context, mapper)
         { }
 
         #endregion
 
         #region ITripRepository
 
-        public IEnumerable<TripDto> GetTripsForPeriod(DateTime start, DateTime end)
+        public IEnumerable<Trip> GetTripsForPeriod(DateTime start, DateTime end)
         {
-            return Entities
-                .Where(x => x.DepartureTime > start && x.DepartureTime < end);
+            return Mapper.Map<IEnumerable<Trip>>(Entities
+                .Where(x => x.DepartureTime > start && x.DepartureTime < end));
         }
 
         #endregion

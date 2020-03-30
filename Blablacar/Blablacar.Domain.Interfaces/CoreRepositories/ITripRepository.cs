@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 namespace Blablacar.Domain.Interfaces
 {
-    public interface ITripRepository : IGenericRepository<TripDto>
+    public interface ITripRepository<TDto> : IGenericRepository<Trip, TDto>
     {
-        IEnumerable<TripDto> GetTripsForPeriod(DateTime start, DateTime end);
+        IEnumerable<Trip> GetTripsForPeriod(DateTime start, DateTime end);
     }
 }

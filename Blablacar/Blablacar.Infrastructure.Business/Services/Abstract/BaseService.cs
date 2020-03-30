@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Blablacar.Domain.Core;
 using Blablacar.Domain.Interfaces;
+using Blablacar.Infrastructure.Data;
 using System;
 
 namespace Blablacar.Infrastructure.Business
@@ -9,14 +10,14 @@ namespace Blablacar.Infrastructure.Business
     {
         #region Fields 
 
-        protected readonly IUnitOfWork UnitOfWork;
+        protected readonly IUnitOfWork<DriverDto, CustomerDto, TripDto> UnitOfWork;
         protected readonly IMapper Mapper;
 
         #endregion
 
         #region Constructors 
 
-        public BaseService(IUnitOfWork unitOfWork, IMapper mapper)
+        public BaseService(IUnitOfWork<DriverDto, CustomerDto, TripDto> unitOfWork, IMapper mapper)
         {
             UnitOfWork = unitOfWork.CheckForNull();
             Mapper = mapper.CheckForNull();

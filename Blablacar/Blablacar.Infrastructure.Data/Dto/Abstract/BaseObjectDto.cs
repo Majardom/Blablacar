@@ -1,4 +1,4 @@
-﻿namespace Blablacar.Domain.Core
+﻿namespace Blablacar.Infrastructure.Data
 {
     public abstract class BaseObjectDto
     {

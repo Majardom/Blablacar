@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Blablacar.Domain.Interfaces
 {
-    public interface IGenericRepository<T> : IDisposable
+    public interface IGenericRepository<T, TDto> : IDisposable
     {
         IEnumerable<T> GetAll();
 

@@ -2,7 +2,7 @@
 
 namespace Blablacar.Domain.Interfaces
 {
-    public interface ICustomerRepository : IGenericRepository<CustomerDto>
+    public interface ICustomerRepository<TDto> : IGenericRepository<Customer, TDto>
     {
     }
 }

@@ -4,19 +4,19 @@ using System;
 
 namespace Blablacar.Infrastructure.Data
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork<DriverDto, CustomerDto, TripDto>
     {
-        public IDriverRepository Drivers { get; }
+        public IDriverRepository<DriverDto> Drivers { get; }
 
-        public ICustomerRepository Customers { get; }
+        public ICustomerRepository<CustomerDto> Customers { get; }
 
-        public ITripRepository Trips { get; }
+        public ITripRepository<TripDto> Trips { get; }
 
         #region Constructors 
 
-        public UnitOfWork(IDriverRepository drivers, 
-            ICustomerRepository customers, 
-            ITripRepository trips)
+        public UnitOfWork(IDriverRepository<DriverDto> drivers, 
+            ICustomerRepository<CustomerDto> customers, 
+            ITripRepository<TripDto> trips)
         {
             Drivers = drivers.CheckForNull();
 

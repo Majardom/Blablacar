@@ -1,5 +1,4 @@
-﻿using Blablacar.Domain.Core;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Blablacar.Infrastructure.Data
 {

@@ -1,4 +1,5 @@
-﻿using Blablacar.Domain.Core;
+﻿using AutoMapper;
+using Blablacar.Domain.Core;
 using Blablacar.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -6,24 +7,27 @@ using System.Collections.Generic;
 
 namespace Blablacar.Infrastructure.Data
 {
-    public abstract class GenericRepository<T> : IGenericRepository<T>
+    public abstract class GenericRepository<T, TDto> : IGenericRepository<T, TDto>
         where T : class
+        where TDto : class
     {
         #region Fields
 
         protected readonly BlablacarDbContext DbContext;
-        protected readonly DbSet<T> Entities;
+        protected readonly DbSet<TDto> Entities;
+        protected readonly IMapper Mapper;
 
         #endregion
 
         #region Constructors 
 
-        public GenericRepository(BlablacarDbContext context)
+        public GenericRepository(BlablacarDbContext context, IMapper maper)
         {
             DbContext = context.CheckForNull();
+            Mapper = maper.CheckForNull();
 
-            Entities = DbContext.Set<T>();
-
+            Entities = DbContext.Set<TDto>();
+           
             Entities.Load();
         }
 
@@ -33,7 +37,8 @@ namespace Blablacar.Infrastructure.Data
 
         public void Create(T item)
         {
-            Entities.Add(item.CheckForNull());
+            var mappedItem = Mapper.Map<TDto>(item.CheckForNull());
+            Entities.Add(mappedItem);
         }
 
         public void Delete(int id)
@@ -46,12 +51,13 @@ namespace Blablacar.Infrastructure.Data
 
         public T Get(int id)
         {
-            return Entities.Find(id);
+            var mappedItem = Mapper.Map<T>(Entities.Find(id));
+            return mappedItem;
         }
 
         public IEnumerable<T> GetAll()
         {
-            return Entities;
+            return Mapper.Map<IEnumerable<T>>(Entities);
         }
 
         public void Save()

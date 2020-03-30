@@ -1,4 +1,6 @@
-﻿namespace Blablacar.Domain.Core
+﻿using Blablacar.Domain.Core;
+
+namespace Blablacar.Infrastructure.Data
 {
     public abstract class PersonDto : BaseObject
     {

@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Blablacar.Infrastructure.Business;
 using System.Reflection;
-using Blablacar.Infrastructure.Business.AutoMapperProfile;
+using Blablacar.Infrastructure.Data;
 
 namespace Blablacar
 {
