@@ -5,7 +5,7 @@ namespace DependenciesResolver.Core
 {
     public interface IContainer
     {
-        void Register<TService, TImplementation>(Func<TImplementation> creator);
+        void Register<TService, TImplementation>(Func<TImplementation> creator) where TImplementation : TService;
 
         TService Get<TService>();
 

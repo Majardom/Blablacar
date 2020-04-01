@@ -36,12 +36,6 @@ namespace DependenciesResolverTests.Core
         }
 
         [Test]
-        public void Register_Throws_WhenRegisterNotRelatedTypes()
-        {
-            Assert.Throws<InvalidOperationException>(() => _container.Register<TestA, TestC>());
-        }
-
-        [Test]
         public void Register_RegistersFine_WhenRegisterEntityWithOutConstructorParameters()
         {
             //action 
