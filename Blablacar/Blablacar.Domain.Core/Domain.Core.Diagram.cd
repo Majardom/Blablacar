@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Blablacar.Domain.Core.BaseObject" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CoreEntities\Abstract\BaseObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Blablacar.Domain.Core.Person" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACECAAAQAQAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CoreEntities\Abstract\Person.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Gender" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Blablacar.Domain.Core.Customer" Collapsed="true">
+    <Position X="3.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CoreEntities\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Blablacar.Domain.Core.Driver" Collapsed="true">
+    <Position X="6.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CoreEntities\Driver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Blablacar.Domain.Core.Trip" Collapsed="true">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgEAAAACAgBAAAIAAAAAAACAAAAogAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CoreEntities\Trip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Blablacar.Domain.Core.Gender" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>CoreEntities\Abstract\Person.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Blablacar.Infrastructure.Business.BaseService">
+    <Position X="1.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAAAAACAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\Abstract\BaseService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="UnitOfWork" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Blablacar.Infrastructure.Business.TripService">
+    <Position X="2" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Services\TripService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Blablacar.Domain.Interfaces.IUnitOfWork&lt;TDriversDto, TCustomersDto, TTripsDto&gt;">
+    <Position X="5.5" Y="1.25" Width="1.5" />
+    <AssociationLine Name="Customers" Type="Blablacar.Domain.Interfaces.ICustomerRepository&lt;TDto&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.438" Y="1.25" />
+        <Point X="6.438" Y="0.875" />
+        <Point X="10.75" Y="0.875" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Drivers" />
+      <Property Name="Trips" />
+      <Property Name="Customers" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="Blablacar.Domain.Interfaces.ICustomerRepository&lt;TDto&gt;" Collapsed="true">
+    <Position X="10.75" Y="0.5" Width="1.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Blablacar.Domain.Interfaces.IDriverRepository&lt;TDto&gt;" Collapsed="true">
+    <Position X="10.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Blablacar.Domain.Interfaces.ITripRepository&lt;TDto&gt;" Collapsed="true">
+    <Position X="10.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

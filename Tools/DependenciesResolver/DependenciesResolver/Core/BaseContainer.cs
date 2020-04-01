@@ -13,10 +13,10 @@ namespace DependenciesResolver.Core
             _instanceCreators = new Dictionary<Type, ICollection<Func<object>>>();
         }
 
-        public void Register<TService, TImplementation>(Func<TImplementation> creator = null)            
+        public void Register<TService, TImplementation>(Func<TImplementation> creator = null) where  TImplementation : TService
         {
             var serviceType = typeof(TService);
-            var implementationType = typeof(TImplementation).CheckForSubClassWithException(serviceType);
+            var implementationType = typeof(TImplementation);
 
             if (implementationType.IsAbstract)
                 throw new InvalidOperationException("Unable to perform registration of abstract class");
