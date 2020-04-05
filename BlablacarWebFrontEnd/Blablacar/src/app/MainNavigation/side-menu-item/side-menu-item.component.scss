@@ -6,15 +6,13 @@
     padding: $nav-item-padding;
     transition: $nav-item-background-transition;
 
-    &.collapsed {
-        .caption {
-            display: none;
-        }
-    }
-
     &:hover {
         cursor: pointer;
         background-color: $transparent-black-color;
+    }
+
+    &:focus {
+        outline: none;
     }
 
     .icon {
@@ -31,6 +29,12 @@
 
         .icon {
             transform: scaleX(-1);
+        }
+    }
+
+     &.collapsed {
+        .caption {
+            display: none;
         }
     }
 }

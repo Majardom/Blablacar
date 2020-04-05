@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { IMenuItem } from '../models/menu-item';
 
 @Component({
@@ -16,11 +16,11 @@ export class SideMenuComponent implements OnInit {
 
   ngOnInit(): void {
     //Load from config (maybe)
-    this.menuItems.push({ caption: "Home", iconName: "home.svg", customClasses: [] });
-    this.menuItems.push({ caption: "Create New Ride", iconName: "plus.svg", customClasses: [] });
-    this.menuItems.push({ caption: "Aviable Rides", iconName: "car.svg", customClasses: [] });
-    this.menuItems.push({ caption: "Booked Rides", iconName: "booked.svg", customClasses: [] });
-    this.menuItems.push({ caption: "Log Out", iconName: "logout.svg", customClasses: ["logout"] });
+    this.menuItems.push({ caption: "Home", iconName: "home.svg", customClasses: [], routeLink:"/home" });
+    this.menuItems.push({ caption: "Create New Ride", iconName: "plus.svg", customClasses: [], routeLink:"/home" });
+    this.menuItems.push({ caption: "Aviable Rides", iconName: "car.svg", customClasses: [], routeLink:"/rides" });
+    this.menuItems.push({ caption: "Booked Rides", iconName: "booked.svg", customClasses: [], routeLink:"/home" });
+    this.menuItems.push({ caption: "Log Out", iconName: "logout.svg", customClasses: ["logout"], routeLink:"/home" });
   }
 
   arrowClick() {
@@ -35,4 +35,6 @@ export class SideMenuComponent implements OnInit {
 
     return resultClasses;
   }
+
+
 } 

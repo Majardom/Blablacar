@@ -1,12 +1,12 @@
 @import "../../Themes/variables.scss";
 
-:host {
+.nav-inner-container {
     display: inline-flex;
     flex-direction: column;
     box-shadow: 0 0 10px $transparent-black-color;
     height: 100%;
 
-    > .nav-item {
+    .nav-item {
         height: 32px;
         padding: $nav-item-padding;
         flex-shrink: 0;
