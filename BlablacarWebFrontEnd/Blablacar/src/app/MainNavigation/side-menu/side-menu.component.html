@@ -1,0 +1,5 @@
+<div class="arrow nav-item" (click)="arrowClick()" [ngClass]="{'collapsed': isOpened}">
+    <img class="icon" src="assets/Icons/left-arrow.svg" />
+</div>
+<app-side-menu-item *ngFor="let menuItem of menuItems" [menuItem]="menuItem" class="nav-item"
+    [ngClass]="[ isOpened ? 'collapsed' : '', provideClassStringForMenuItem(menuItem)]"></app-side-menu-item>

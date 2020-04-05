@@ -1,0 +1,42 @@
+@import "../../Themes/variables.scss";
+
+:host {
+    display: inline-flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px $transparent-black-color;
+    height: 100%;
+
+    > .nav-item {
+        height: 32px;
+        padding: $nav-item-padding;
+        flex-shrink: 0;
+
+        &.arrow {
+            display: flex;
+            align-items: center;
+            transition: $nav-item-background-transition;
+            cursor: pointer;
+
+
+            .icon {
+                width: $icon-avarage-size;
+                height: $icon-avarage-size;
+            }
+
+            &.collapsed {
+                .icon {
+                    transform: rotate(180deg);
+                }
+            }
+
+            &:hover {
+                background-color: $transparent-black-color;
+            }
+        }
+
+        &.collapsed {
+            padding-right: $nav-item-single-padding;
+        }
+        
+    }   
+}

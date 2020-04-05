@@ -1,0 +1,36 @@
+@import "../../Themes/variables.scss";
+
+:host {
+    display: inline-flex;
+    align-items: center;
+    padding: $nav-item-padding;
+    transition: $nav-item-background-transition;
+
+    &.collapsed {
+        .caption {
+            display: none;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: $transparent-black-color;
+    }
+
+    .icon {
+        width: $icon-avarage-size;
+        height: $icon-avarage-size;
+    }
+
+    .caption {
+        margin-left: 12px;
+    }
+
+    &.logout {
+        margin-top: auto;
+
+        .icon {
+            transform: scaleX(-1);
+        }
+    }
+}
