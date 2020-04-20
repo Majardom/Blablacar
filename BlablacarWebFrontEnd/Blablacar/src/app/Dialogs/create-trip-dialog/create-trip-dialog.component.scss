@@ -1,0 +1,26 @@
+@import "../../Themes/variables.scss";
+
+:host {
+    .route {
+        display: flex;
+        align-items: center;
+
+        .item {
+            margin-right: $standart-offset;
+
+            &.icon {
+                width: $icon-avarage-size;
+                height: $icon-avarage-size;
+                transform: scaleX(-1);
+            }
+        }
+    }
+
+    .actions {
+        button {
+            &:first-of-type {
+                margin-left: auto;
+            }
+        }
+    }
+}

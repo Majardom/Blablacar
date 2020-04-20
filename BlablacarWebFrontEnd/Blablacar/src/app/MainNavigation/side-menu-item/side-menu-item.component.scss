@@ -1,27 +1,15 @@
 @import "../../Themes/variables.scss";
 
+
 :host {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    padding: $nav-item-padding;
     transition: $nav-item-background-transition;
 
-    &:hover {
-        cursor: pointer;
-        background-color: $transparent-black-color;
-    }
-
-    &:focus {
-        outline: none;
-    }
-
-    .icon {
-        width: $icon-avarage-size;
-        height: $icon-avarage-size;
-    }
-
-    .caption {
-        margin-left: 12px;
+    &.collapsed {
+        .caption {
+            display: none;
+        }
     }
 
     &.logout {
@@ -32,9 +20,30 @@
         }
     }
 
-     &.collapsed {
-        .caption {
-            display: none;
+    
+    &:hover {
+        cursor: pointer;
+        background-color: $transparent-black-color;
+    }
+
+    .item-host {
+        display: flex;
+        align-items: center;
+    
+    
+        &.routeContainer {
+            outline: none;
         }
+    
+        .icon {
+            width: $icon-avarage-size;
+            height: $icon-avarage-size;
+        }
+    
+        .caption {
+            margin-left: 12px;
+        }
+    
     }
 }
+

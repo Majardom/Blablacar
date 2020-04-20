@@ -3,8 +3,9 @@
 .nav-inner-container {
     display: inline-flex;
     flex-direction: column;
-    box-shadow: 0 0 10px $transparent-black-color;
+    box-shadow: $box-shadow;
     height: 100%;
+    margin-right: 2 * $standart-offset;
 
     .nav-item {
         height: 32px;

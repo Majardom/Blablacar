@@ -1,0 +1,12 @@
+<div mat-dialog-content>
+  <div class="route">
+    <app-input-dialog-field class="item" [caption]="'From'"></app-input-dialog-field>
+    <img class="icon item" src="assets/Icons/left-arrow.svg" />
+    <app-input-dialog-field class="item" [caption]="'To'"></app-input-dialog-field>
+  </div>
+  <app-date-picker></app-date-picker>
+</div>
+<div mat-dialog-actions class="actions">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button mat-dialog-close cdkFocusInitial>Create</button>
+</div>

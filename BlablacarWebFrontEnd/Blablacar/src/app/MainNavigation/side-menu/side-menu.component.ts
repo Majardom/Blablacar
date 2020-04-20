@@ -9,26 +9,29 @@ import { IMenuItem } from '../models/menu-item';
 export class SideMenuComponent implements OnInit {
 
   menuItems: IMenuItem[] = [];
-  isOpened: boolean = true;
+  isClosed: boolean = true;
 
   constructor() {
   }
 
   ngOnInit(): void {
-    //Load from config (maybe)
-    this.menuItems.push({ caption: "Home", iconName: "home.svg", customClasses: [], routeLink:"/home" });
-    this.menuItems.push({ caption: "Create New Ride", iconName: "plus.svg", customClasses: [], routeLink:"/home" });
-    this.menuItems.push({ caption: "Aviable Rides", iconName: "car.svg", customClasses: [], routeLink:"/rides" });
-    this.menuItems.push({ caption: "Booked Rides", iconName: "booked.svg", customClasses: [], routeLink:"/home" });
-    this.menuItems.push({ caption: "Log Out", iconName: "logout.svg", customClasses: ["logout"], routeLink:"/home" });
+    //Almost load from config)
+    this.menuItems.push({ caption: "Home", iconName: "home.svg", routeLink: "/home" });
+    this.menuItems.push({ caption: "Create New Trip", iconName: "plus.svg", onClickEvent: "openCreateTripDialog"});
+    this.menuItems.push({ caption: "Aviable Trips", iconName: "car.svg", routeLink: "/rides" });
+    this.menuItems.push({ caption: "Booked Trips", iconName: "booked.svg", routeLink: "/home" });
+    this.menuItems.push({ caption: "Log Out", iconName: "logout.svg", customClasses: ["logout"], routeLink: "/home" });
   }
 
   arrowClick() {
-    this.isOpened = !this.isOpened;
+    this.isClosed = !this.isClosed;
   }
 
   provideClassStringForMenuItem(menuItem: IMenuItem): string {
     let resultClasses = '';
+
+    if (!menuItem || !menuItem.customClasses)
+      return resultClasses;
 
     for (let styleClass of menuItem.customClasses)
       resultClasses += styleClass;
@@ -36,5 +39,7 @@ export class SideMenuComponent implements OnInit {
     return resultClasses;
   }
 
-
+  openCreateTripDialog(): void {
+    console.log("shit");
+  }
 } 

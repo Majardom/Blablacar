@@ -1,2 +1,8 @@
-<img class="icon" [src]="provideIconPath()"/>
-<div class="caption">{{menuItem.caption}}</div>
+<div *ngIf="menuItem.routeLink" class="item-host routeContainer" routerLink="{{menuItem.routeLink}}">
+    <img class="icon" [src]="provideIconPath()" />
+    <div class="caption">{{menuItem.caption}}</div>
+</div>
+<div *ngIf="!menuItem.routeLink" class="item-host">
+    <img class="icon" [src]="provideIconPath()" />
+    <div class="caption">{{menuItem.caption}}</div>
+</div> 

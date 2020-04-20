@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RideListItemComponent } from './ride-list-item.component';
+import { CreateTripDialogComponent } from './create-trip-dialog.component';
 
-describe('RideListItemComponent', () => {
-  let component: RideListItemComponent;
-  let fixture: ComponentFixture<RideListItemComponent>;
+describe('CreateTripDialogComponent', () => {
+  let component: CreateTripDialogComponent;
+  let fixture: ComponentFixture<CreateTripDialogComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RideListItemComponent ]
+      declarations: [ CreateTripDialogComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RideListItemComponent);
+    fixture = TestBed.createComponent(CreateTripDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
