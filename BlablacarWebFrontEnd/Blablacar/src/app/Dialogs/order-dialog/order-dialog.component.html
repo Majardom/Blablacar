@@ -1,0 +1,17 @@
+
+<div mat-dialog-content class="content">
+    <div class="from-to">
+        <div class="item">From: {{trip.From}}</div>
+        <div class="item">To: {{trip.To}}</div>
+    </div>
+    <div class="date-time">Depature: {{trip.DepatureTime}}</div>
+    <div class="personal-data">
+        <app-input-dialog-field class="item" [caption]="'Name'"></app-input-dialog-field>
+        <app-list-of-values class="item" [label]="'Gender'" [values]="genders"></app-list-of-values>
+        <app-input-dialog-field class="item" [caption]="'Phone Number'"></app-input-dialog-field>
+    </div>
+</div>
+<div mat-dialog-actions class="actions">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button mat-dialog-close cdkFocusInitial>Order</button>
+  </div>

@@ -16,12 +16,21 @@ import {MaterialModule} from './Modules/material-module';
 import { CreateTripDialogComponent } from './Dialogs/create-trip-dialog/create-trip-dialog.component';
 import { InputDialogFieldComponent } from './Controls/input-dialog-field/input-dialog-field.component';
 import { DatePickerComponent } from './Controls/date-picker/date-picker.component';
+import { ListOfValuesComponent } from './Controls/list-of-values/list-of-values.component';
+import { OrderDialogComponent } from './Dialogs/order-dialog/order-dialog.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { AppConfigService } from 'src/services/app-config/app-config.service';
 
 const appRoutes: Routes = [
-  { path: 'rides', component: TripsListComponent },
+  { path: 'trips', component: TripsListComponent },
   { path: 'home', component: HomePageComponent },
   { path: '',   redirectTo: '/home', pathMatch: 'full' }
 ];
+
+export function initializeApp(appConfig: AppConfigService) {
+  return () => appConfig.load();
+}
 
 @NgModule({
   declarations: [
@@ -33,14 +42,17 @@ const appRoutes: Routes = [
     TripsListComponent,
     CreateTripDialogComponent,
     InputDialogFieldComponent,
-    DatePickerComponent
+    DatePickerComponent,
+    ListOfValuesComponent,
+    OrderDialogComponent
   ],
-  entryComponents: [CreateTripDialogComponent],
+  entryComponents: [CreateTripDialogComponent, OrderDialogComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ClickOutsideModule,
     MaterialModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

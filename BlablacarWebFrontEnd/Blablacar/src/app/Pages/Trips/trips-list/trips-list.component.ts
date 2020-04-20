@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ITrip } from '../../models/trip';
-import { ICustomer } from '../../models/customer';
+import { ITrip } from '../../../../models/trip';
+import { ICustomer } from '../../../../models/customer';
 import { formatDate } from '@angular/common';
 
 @Component({

@@ -10,6 +10,9 @@ export class InputDialogFieldComponent implements OnInit {
   @Input()
   caption: string;
 
+  @Input()
+  type: string;
+
   constructor() { }
 
   ngOnInit(): void {

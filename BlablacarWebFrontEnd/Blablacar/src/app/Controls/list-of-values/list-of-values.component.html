@@ -1,0 +1,6 @@
+<mat-form-field>
+    <mat-label>{{label}}</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let value of values" [value]="value.Id">{{value.Name}}</mat-option>
+    </mat-select>
+  </mat-form-field>

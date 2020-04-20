@@ -1,0 +1,20 @@
+@import "../../Themes/variables.scss";
+
+.content {
+    .item {
+        margin-right: $standart-offset;
+    }
+
+    .from-to {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.actions {
+    button {
+        &:first-of-type {
+            margin-left: auto;
+        }
+    }
+}

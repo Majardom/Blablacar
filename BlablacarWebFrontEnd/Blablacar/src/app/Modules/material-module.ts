@@ -5,9 +5,9 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatDatepickerModule} from "@angular/material/datepicker";
-import {MatNativeDateModule} from "@angular/material/core";
+import {MatNativeDateModule, MatOptionModule} from "@angular/material/core";
 import {MatMomentDateModule} from "@angular/material-moment-adapter";
-
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
     imports: [
@@ -17,7 +17,9 @@ import {MatMomentDateModule} from "@angular/material-moment-adapter";
         MatFormFieldModule,
         MatDatepickerModule,
         MatNativeDateModule,
-        MatMomentDateModule
+        MatMomentDateModule,
+        MatOptionModule,
+        MatSelectModule
     ],
     exports: [
         MatButtonModule,
@@ -26,7 +28,9 @@ import {MatMomentDateModule} from "@angular/material-moment-adapter";
         MatFormFieldModule,
         MatDatepickerModule,
         MatNativeDateModule,
-        MatMomentDateModule
+        MatMomentDateModule,
+        MatOptionModule,
+        MatSelectModule
     ]
 })
 export class MaterialModule { }
