@@ -33,6 +33,8 @@ namespace Blablacar.Infrastructure.Business
 
         public void CreateTrip(Trip trip)
         {
+            trip.CheckForNull();
+
             var dbTrip = UnitOfWork.Trips.GetAll().FirstOrDefault(x => x.Id == trip.Id);
 
             if (dbTrip != null)
