@@ -1,8 +1,8 @@
 ﻿using Blablacar.Domain.Core;
 
-namespace Blablacar.Infrastructure.Data
+namespace Blablacar.Dtos
 {
-    public abstract class PersonDto : BaseObject
+    public abstract class PersonDto : BaseObjectDto
     {
         public string Name { get; set; }
 

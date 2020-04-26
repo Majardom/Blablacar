@@ -13,33 +13,33 @@ namespace Blablacar.IntegrationTests.Utils
             context.Customers.AddRange(CreateCustomers());
         }
 
-        private static List<CustomerDto> CreateCustomers()
+        private static List<Infrastructure.Data.Customer> CreateCustomers()
         {
-            return new List<CustomerDto>
+            return new List<Infrastructure.Data.Customer>
             {
-                new CustomerDto() { Name = "Drew", Gender = Gender.Male, PhoneNumber = "+380123456123" },
-                new CustomerDto() { Name = "Tom", Gender = Gender.Male, PhoneNumber = "+380123123456" },
-                new CustomerDto() { Name = "Katty", Gender = Gender.Female, PhoneNumber = "+380987654321" }
+                new Infrastructure.Data.Customer() { Name = "Drew", Gender = Gender.Male, PhoneNumber = "+380123456123" },
+                new Infrastructure.Data.Customer() { Name = "Tom", Gender = Gender.Male, PhoneNumber = "+380123123456" },
+                new Infrastructure.Data.Customer() { Name = "Katty", Gender = Gender.Female, PhoneNumber = "+380987654321" }
             };
         }
 
-        private static List<DriverDto> CreateDrivers()
+        private static List<Infrastructure.Data.Driver> CreateDrivers()
         {
-            return new List<DriverDto>
+            return new List<Infrastructure.Data.Driver>
             {
-                new DriverDto() { Name = "John", Gender = Gender.Male, PhoneNumber = "+380123456789" },
-                new DriverDto() { Name = "Mike", Gender = Gender.Male, PhoneNumber = "+380123123123" },
-                new DriverDto() { Name = "Amy", Gender = Gender.Female, PhoneNumber = "+380987654321" },
+                new Infrastructure.Data.Driver() { Name = "John", Gender = Gender.Male, PhoneNumber = "+380123456789" },
+                new Infrastructure.Data.Driver() { Name = "Mike", Gender = Gender.Male, PhoneNumber = "+380123123123" },
+                new Infrastructure.Data.Driver() { Name = "Amy", Gender = Gender.Female, PhoneNumber = "+380987654321" },
             };
         }
 
-        private static List<TripDto> CrateTrips()
+        private static List<Infrastructure.Data.Trip> CrateTrips()
         {
-            return new List<TripDto>
+            return new List<Infrastructure.Data.Trip>
             {
-                new TripDto() { From = "Lviv", To = "Kyiv" },
-                new TripDto() { From = "Lviv", To = "Lutsk" },
-                new TripDto() { From = "Symu", To = "Cherhigiv" }
+                new Infrastructure.Data.Trip() { From = "Lviv", To = "Kyiv" },
+                new Infrastructure.Data.Trip() { From = "Lviv", To = "Lutsk" },
+                new Infrastructure.Data.Trip() { From = "Symu", To = "Cherhigiv" }
             };
         }
     }

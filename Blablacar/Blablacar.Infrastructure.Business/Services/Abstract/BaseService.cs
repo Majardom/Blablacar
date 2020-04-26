@@ -10,14 +10,14 @@ namespace Blablacar.Infrastructure.Business
     {
         #region Fields 
 
-        protected readonly IUnitOfWork<DriverDto, CustomerDto, TripDto> UnitOfWork;
+        protected readonly IUnitOfWork<Data.Driver, Data.Customer, Data.Trip> UnitOfWork;
         protected readonly IMapper Mapper;
 
         #endregion
 
         #region Constructors 
 
-        public BaseService(IUnitOfWork<DriverDto, CustomerDto, TripDto> unitOfWork, IMapper mapper)
+        public BaseService(IUnitOfWork<Data.Driver, Data.Customer, Data.Trip> unitOfWork, IMapper mapper)
         {
             UnitOfWork = unitOfWork.CheckForNull();
             Mapper = mapper.CheckForNull();

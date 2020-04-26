@@ -4,7 +4,7 @@ using Blablacar.Domain.Interfaces;
 
 namespace Blablacar.Infrastructure.Data
 {
-    public class CustomerRepository : GenericRepository<Customer, CustomerDto>, ICustomerRepository<CustomerDto>
+    public class CustomerRepository : GenericRepository<Domain.Core.Customer, Customer>, ICustomerRepository<Customer>
     {
         #region Constructors 
 

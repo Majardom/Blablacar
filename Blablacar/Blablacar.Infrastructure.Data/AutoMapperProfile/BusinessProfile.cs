@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Blablacar.Domain.Core;
 
 namespace Blablacar.Infrastructure.Data
 {
@@ -7,11 +6,11 @@ namespace Blablacar.Infrastructure.Data
     {
         public BusinessProfile()
         {
-            CreateMap<CustomerDto, Customer>().ReverseMap();
+            CreateMap<Domain.Core.Customer, Customer>().ReverseMap();
 
-            CreateMap<DriverDto, Driver>().ReverseMap();
+            CreateMap<Domain.Core.Driver, Driver>().ReverseMap();
 
-            CreateMap<Trip, TripDto>().ReverseMap();
+            CreateMap<Domain.Core.Trip, Trip>().ReverseMap();
         }
     }
 }

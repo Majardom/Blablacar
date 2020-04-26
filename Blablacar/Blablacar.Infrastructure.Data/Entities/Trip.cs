@@ -2,7 +2,7 @@
 
 namespace Blablacar.Infrastructure.Data
 {
-    public class TripDto : BaseObjectDto
+    public class Trip : BaseObject
     {
         public string From { get; set; }
 
@@ -10,8 +10,10 @@ namespace Blablacar.Infrastructure.Data
 
         public DateTime DepartureTime { get; set; }
 
-        public DriverDto Driver { get; set; }
+        public Driver Driver { get; set; }
 
-        public CustomerDto Customer { get; set; }
+        public Customer Customer { get; set; }
+
+        public int Price { get; set; }
     }
 }

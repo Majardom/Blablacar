@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Blablacar.Infrastructure.Data
 {
-    public class TripRepository : GenericRepository<Trip, TripDto>, ITripRepository<TripDto>
+    public class TripRepository : GenericRepository<Domain.Core.Trip, Trip>, ITripRepository<Trip>
     {
         #region Constructors 
 
@@ -19,9 +19,9 @@ namespace Blablacar.Infrastructure.Data
 
         #region ITripRepository
 
-        public IEnumerable<Trip> GetTripsForPeriod(DateTime start, DateTime end)
+        public IEnumerable<Domain.Core.Trip> GetTripsForPeriod(DateTime start, DateTime end)
         {
-            return Mapper.Map<IEnumerable<Trip>>(Entities
+            return Mapper.Map<IEnumerable<Domain.Core.Trip>>(Entities
                 .Where(x => x.DepartureTime > start && x.DepartureTime < end));
         }
 

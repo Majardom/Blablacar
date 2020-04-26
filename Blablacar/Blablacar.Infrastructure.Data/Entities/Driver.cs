@@ -1,6 +1,7 @@
 ﻿namespace Blablacar.Infrastructure.Data
 {
-    public class CustomerDto : PersonDto
+    public class Driver : Person
     {
+
     }
 }

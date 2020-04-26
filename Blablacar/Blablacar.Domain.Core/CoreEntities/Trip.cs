@@ -16,6 +16,8 @@ namespace Blablacar.Domain.Core
 
         public Customer Customer { get; private set; }
 
+        public int Price { get; set; }
+
         #endregion
 
         #region Fluent API

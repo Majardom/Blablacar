@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Blablacar.Infrastructure.Data
 {
-    public class DriverRepository : GenericRepository<Driver, DriverDto>, IDriverRepository<DriverDto>
+    public class DriverRepository : GenericRepository<Domain.Core.Driver, Driver>, IDriverRepository<Driver>
     {
         #region Constructors 
 
@@ -18,9 +18,9 @@ namespace Blablacar.Infrastructure.Data
 
         #region IDriverRepository
 
-        public IEnumerable<Driver> GetDrivers(Gender gender)
+        public IEnumerable<Domain.Core.Driver> GetDrivers(Gender gender)
         {
-            return Mapper.Map<IEnumerable<Driver>>(Entities
+            return Mapper.Map<IEnumerable<Domain.Core.Driver>>(Entities
                 .Where(x => x.Gender == gender));
         }
 

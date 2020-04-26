@@ -1,5 +1,5 @@
-﻿namespace Blablacar.Infrastructure.Data
-{
+﻿namespace Blablacar.Dtos
+{ 
     public class DriverDto : PersonDto
     {
 

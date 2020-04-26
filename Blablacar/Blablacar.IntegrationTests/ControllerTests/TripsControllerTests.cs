@@ -1,4 +1,5 @@
 ﻿using Blablacar.Domain.Core;
+using Blablacar.Dtos;
 using FluentAssertions;
 using System;
 using System.IO;
@@ -32,9 +33,9 @@ namespace Blablacar.IntegrationTests.ControllerTests
         [Fact]
         public async Task Post_ReturnsOkResult()
         {
-            var trip = new Trip().IsFrom("Kyiv").IsTo("Poltava");
+            var trip = new TripDto() { From = "Kyiv",To = "Poltava" };
             var client = _factory.CreateClient();
-            var res = await client.PostAsJsonAsync("/Trips/add", trip);
+            var res = await client.PostAsJsonAsync("/Trips", trip);
             res.StatusCode.Should().Be(HttpStatusCode.OK);
         }
     }

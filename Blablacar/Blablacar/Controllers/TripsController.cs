@@ -1,4 +1,6 @@
-﻿using Blablacar.Domain.Core;
+﻿using AutoMapper;
+using Blablacar.Domain.Core;
+using Blablacar.Dtos;
 using Blablacar.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -10,30 +12,31 @@ namespace Blablacar.Controllers
     public class TripsController : ControllerBase
     {
         private readonly ITripService _tripsService;
+        private readonly IMapper _mapper;
 
-        public TripsController(ITripService tripsService)
+        public TripsController(ITripService tripsService, IMapper mapper)
         {
             _tripsService = tripsService;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public IEnumerable<Trip> Get()
+        public IEnumerable<TripDto> Get()
         {
-            return _tripsService.GetTrips();
+            return _mapper.Map<IEnumerable<TripDto>>( _tripsService.GetTrips());
         }
 
         [HttpPost]
-        [Route("add")]
-        public void AddTrip(Trip trip)
+        public void AddTrip([FromBody]TripDto trip)
         {
-            _tripsService.CreateTrip(trip);
+            _tripsService.CreateTrip(_mapper.Map<Trip>(trip));
         }
 
         [HttpPost]
         [Route("order/{tripId}")]
-        public void OrderTrip(int tripId, [FromBody]Customer customer)
+        public void OrderTrip(int tripId, [FromBody]CustomerDto customer)
         {
-            _tripsService.OrderTrip(tripId, customer);
+            _tripsService.OrderTrip(tripId, _mapper.Map<Customer>(customer));
         }
     }
 }

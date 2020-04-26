@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Blablacar.Infrastructure.Business;
 using System.Reflection;
 using Blablacar.Infrastructure.Data;
+using Blablacar.Automapper;
 
 namespace Blablacar
 {
@@ -24,7 +25,7 @@ namespace Blablacar
         {
             services.AddControllers();
 
-            services.AddAutoMapper(typeof(BusinessProfile).Assembly);
+            services.AddAutoMapper(typeof(BusinessProfile).Assembly, typeof(WebAPIProfile).Assembly);
 
             services.AddBlablacar();
         }
