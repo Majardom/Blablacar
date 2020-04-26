@@ -1,7 +1,13 @@
+@import "../../../Themes/variables";
+
+$padding:  2 * $standart-offset;
+
 :host {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     height: 100vh;
     overflow: auto;
+    padding: 0px $padding 0px $padding;
+    width: 100%;
 }

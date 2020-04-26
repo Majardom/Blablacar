@@ -5,7 +5,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Blablacar.Infrastructure.Business;
-using System.Reflection;
 using Blablacar.Infrastructure.Data;
 using Blablacar.Automapper;
 
@@ -28,6 +27,18 @@ namespace Blablacar
             services.AddAutoMapper(typeof(BusinessProfile).Assembly, typeof(WebAPIProfile).Assembly);
 
             services.AddBlablacar();
+
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://localhost:4200")
+                                      .AllowAnyHeader()
+                                      .AllowAnyMethod();
+                                  });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +54,8 @@ namespace Blablacar
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {

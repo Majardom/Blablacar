@@ -1,5 +1,9 @@
 @import "../../Themes/variables.scss";
 
+::ng-deep .mat-form-field {
+    width: 100%;
+}
+
 :host {
     
 

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Blablacar.Dtos;
+using System;
 
 namespace Blablacar.Automapper
 {
@@ -11,7 +12,12 @@ namespace Blablacar.Automapper
 
             CreateMap<Domain.Core.Driver, DriverDto>().ReverseMap();
 
-            CreateMap<Domain.Core.Trip, TripDto>().ReverseMap();
+            CreateMap<TripDto, Domain.Core.Trip>().ForMember(x => x.DepartureTime, m => m.MapFrom(s =>
+                DateTime.Parse(s.DepartureTime)));
+
+
+            CreateMap<Domain.Core.Trip, TripDto>().ForMember(x => x.DepartureTime, m => m.MapFrom(s =>
+                s.DepartureTime.ToString()));
         }
     }
 }

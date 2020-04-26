@@ -8,12 +8,12 @@ namespace Blablacar.Dtos
 
         public string To { get; set; }
 
-        public DateTime DepartureTime { get; set; }
+        public string DepartureTime { get; set; }
 
         public DriverDto Driver { get; set; }
 
         public CustomerDto Customer { get; set; }
 
-        public int Price { get; set; }
+        public double Price { get; set; }
     }
 }

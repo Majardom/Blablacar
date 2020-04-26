@@ -1,19 +1,23 @@
 <div mat-dialog-content class="content">
   <div class="route">
-    <app-input-dialog-field class="item" [caption]="'From'"></app-input-dialog-field>
+    <app-input-dialog-field class="item" [caption]="'From'" ngDefaultControl [(ngModel)]="trip.from"></app-input-dialog-field>
     <img class="icon item" src="assets/Icons/left-arrow.svg" />
-    <app-input-dialog-field class="item" [caption]="'To'"></app-input-dialog-field>
+    <app-input-dialog-field class="item" [caption]="'To'" ngDefaultControl [(ngModel)]="trip.to"></app-input-dialog-field>
   </div>
   <div class="date-time align">
-    <app-date-picker class="item"></app-date-picker>
-    <app-input-dialog-field class="item time" [caption]="'Time'" [type]="'time'"></app-input-dialog-field>
+    <app-input-dialog-field class="item time" [caption]="'Time'" [type]="'datetime-local'" ngDefaultControl [(ngModel)]="trip.departureTime"></app-input-dialog-field>
   </div>
   <div class="driver-price align">
-    <app-list-of-values class="item" [label]="'Select driver'" [values]="drivers"></app-list-of-values>
-    <app-input-dialog-field class="item" [caption]="'Price'" [type]="'number'"></app-input-dialog-field>
+    <mat-form-field class="item">
+      <mat-label>Select driver</mat-label>
+      <mat-select ngDefaultControl [(value)]="selectedDriverId">
+        <mat-option ngDefaultControl *ngFor="let driver of drivers" [value]="driver.id" >{{driver.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <app-input-dialog-field class="item" [caption]="'Price'" [type]="'number'" ngDefaultControl [(ngModel)]="trip.price"></app-input-dialog-field>
   </div>
 </div>
 <div mat-dialog-actions class="actions">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>Create</button>
+  <button mat-button mat-dialog-close cdkFocusInitial (click)="createTrip()">Create</button>
 </div>

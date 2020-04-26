@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Blablacar.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class TripsController : ControllerBase
     {

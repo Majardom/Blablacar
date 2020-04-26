@@ -16,7 +16,7 @@ namespace Blablacar.Domain.Core
 
         public Customer Customer { get; private set; }
 
-        public int Price { get; set; }
+        public double Price { get; set; }
 
         #endregion
 

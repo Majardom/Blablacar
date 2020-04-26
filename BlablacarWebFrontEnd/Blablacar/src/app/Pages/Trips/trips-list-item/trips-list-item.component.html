@@ -1,11 +1,11 @@
-<header class="title row">From: {{trip.From}} To: {{trip.To}}</header>
+<header class="title row">From: {{trip.from}} To: {{trip.to}}</header>
 <section>
-    <div class="driver row">Driver: {{trip.Driver.Name}}</div>
-    <div class="depature-date row">Depature: {{trip.DepatureTime}}</div>
+    <div class="driver row">Driver: {{trip.driver.name}}</div>
+    <div class="depature-date row">Depature: {{trip.departureTime}}</div>
 </section>
 <footer>
     <div class="order row">
-        <div class="price">Price: {{trip.Price}}</div>
+        <div class="price">Price: {{trip.price}}</div>
         <div class="order-btn" (click)="order()">Order</div>
     </div>
 </footer>

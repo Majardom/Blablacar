@@ -26,7 +26,7 @@ namespace Blablacar.IntegrationTests.ControllerTests
         public async Task Get_ReturnsOkResult()
         {
             var client = _factory.CreateClient();
-            var res = await client.GetAsync("/Trips");
+            var res = await client.GetAsync("/api/trips");
             res.StatusCode.Should().Be(HttpStatusCode.OK);
         }
 
@@ -35,7 +35,7 @@ namespace Blablacar.IntegrationTests.ControllerTests
         {
             var trip = new TripDto() { From = "Kyiv",To = "Poltava" };
             var client = _factory.CreateClient();
-            var res = await client.PostAsJsonAsync("/Trips", trip);
+            var res = await client.PostAsJsonAsync("/api/trips", trip);
             res.StatusCode.Should().Be(HttpStatusCode.OK);
         }
     }

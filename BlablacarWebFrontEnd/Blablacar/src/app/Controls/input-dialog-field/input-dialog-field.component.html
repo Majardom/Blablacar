@@ -1,4 +1,4 @@
 <mat-form-field>
     <mat-label>{{caption}}</mat-label>
-    <input matInput type="" [type]="type">    
+    <input ngDefaultControl matInput [(ngModel)]="value" (blur)="onBlur()" [type]="type" />
 </mat-form-field>

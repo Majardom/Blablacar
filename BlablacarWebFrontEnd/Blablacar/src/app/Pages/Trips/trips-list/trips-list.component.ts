@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ITrip } from '../../../../models/trip';
 import { ICustomer } from '../../../../models/customer';
 import { formatDate } from '@angular/common';
+import { Gender } from 'src/models/person';
+import { TripsService } from 'src/services/trips/trips.service';
 
 @Component({
   selector: 'app-trips-list',
@@ -12,28 +14,12 @@ export class TripsListComponent implements OnInit {
 
   trips: ITrip[] = [];
 
-  constructor() { }
+  constructor(private tripsService: TripsService) { }
 
   ngOnInit(): void {
-    let driver: ICustomer = {Id: 1, Gender: "Male", Name:"Some Driver", PhoneNumber:"380blablabla"}; 
-    let trip: ITrip = {Id: 1, Customer: null, DepatureTime: formatDate(new Date(), 'yyyy-MM-dd hh:mm', 'en_US'), Driver: driver, From:"SHIT", To:"ASS", Price:300};
-
-    this.trips.push(trip);
-    this.trips.push(trip);
-    this.trips.push(trip);
-    this.trips.push(trip);
-    this.trips.push(trip);
-    this.trips.push(trip);
-    this.trips.push(trip);
-    this.trips.push(trip);
-    this.trips.push(trip);
-    this.trips.push(trip);
-    this.trips.push(trip);
-    this.trips.push(trip);
-    this.trips.push(trip);
-    this.trips.push(trip);
-    this.trips.push(trip);
-    this.trips.push(trip);
+    this.tripsService.getAllTrips().subscribe((data: ITrip[]) => {
+        this.trips = data;
+    });
   }
 
 }

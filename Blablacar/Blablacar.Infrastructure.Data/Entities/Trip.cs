@@ -14,6 +14,6 @@ namespace Blablacar.Infrastructure.Data
 
         public Customer Customer { get; set; }
 
-        public int Price { get; set; }
+        public double Price { get; set; }
     }
 }

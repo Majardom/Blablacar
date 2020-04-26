@@ -1,4 +1,4 @@
 export interface IBaseModel 
 {
-    Id: number;
+    id: number;
 }
