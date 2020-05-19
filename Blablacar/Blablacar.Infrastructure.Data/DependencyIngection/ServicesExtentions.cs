@@ -12,7 +12,7 @@ namespace Blablacar.Infrastructure.Data
             services.AddScoped<ITripRepository<Trip>, TripRepository>();
             services.AddScoped<IDriverRepository<Driver>, DriverRepository>();
             services.AddScoped<ICustomerRepository<Customer>, CustomerRepository>();
-            services.AddDbContext<BlablacarDbContext>(options => options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=Blablacar;Trusted_Connection=True;"));
+            services.AddDbContext<BlablacarDbContext>(options => options.UseSqlServer(@"Server=blablacardb,1433;Database=Blablacar;User Id=sa;Password=BigPassw0rd;"));
         }
     }
 }

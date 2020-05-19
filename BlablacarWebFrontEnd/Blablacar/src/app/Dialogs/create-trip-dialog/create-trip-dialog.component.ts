@@ -21,9 +21,7 @@ export class CreateTripDialogComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.drivers.push({id:0, gender: Gender.Male, name:'SomeShit1', phoneNumber:'380'});
-    this.drivers.push({id:1, gender: Gender.Male, name:'SomeShit2', phoneNumber:'380'});
-    this.drivers.push({id:2, gender: Gender.Male, name:'SomeShit3', phoneNumber:'380'});
+    this.drivers.push({id:0, gender: Gender.Male, name:'Some Driver 1', phoneNumber:'380123213123'});
 
     this.selected = this.drivers[0];
   }

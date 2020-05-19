@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  blablacarangular: 
+    build: 
+      context: . 
+      dockerfile: docker/Dockerfile
+    ports: 
+      - "8000:4200"
+    volumes:
+      - "/app/node_modules"
+      - ".:/app"

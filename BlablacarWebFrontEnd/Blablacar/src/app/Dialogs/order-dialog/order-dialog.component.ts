@@ -12,7 +12,7 @@ export class OrderDialogComponent implements OnInit {
   trip: ITrip;
   genders = [{Id:0, Name:'Male'}, {Id: 1, Name:'Female'}]
 
-  constructor(@Inject(MAT_DIALOG_DATA) data) { 
+  constructor(@Inject(MAT_DIALOG_DATA) data) {  
     this.trip = data.trip;
   }
 

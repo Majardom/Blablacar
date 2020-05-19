@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  blablacar:
+    image: ${DOCKER_REGISTRY-}blablacar
+    build:
+      context: .
+      dockerfile: Blablacar/Dockerfile
+  
+  blablacardb:
+    container_name: BlablacarDb
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "BigPassw0rd"
+      ACCEPT_EULA: "Y"

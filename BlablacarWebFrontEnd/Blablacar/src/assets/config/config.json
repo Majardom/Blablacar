@@ -1,6 +1,6 @@
 {
     "backend": {
-        "endpoint": "https://localhost:44345",
+        "endpoint": "https://localhost:32778",
         
         "restful": {
             "trips" : "/api/trips"
