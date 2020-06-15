@@ -1,5 +1,4 @@
-﻿using Blablacar.Domain.Interfaces;
-using Blablacar.Infrastructure.Data;
+﻿using Blablacar.Infrastructure.Data;
 using Blablacar.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 

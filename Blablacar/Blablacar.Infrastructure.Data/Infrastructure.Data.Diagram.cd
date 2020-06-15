@@ -7,18 +7,18 @@
       <FileName>DbContext\BlablacarDbContext.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Blablacar.Infrastructure.Data.BaseObjectDto" Collapsed="true">
+  <Class Name="Blablacar.Infrastructure.Data.BaseObject" Collapsed="true">
     <Position X="5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Dto\Abstract\BaseObjectDto.cs</FileName>
+      <FileName>Entities\Abstract\BaseObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Blablacar.Infrastructure.Data.PersonDto" Collapsed="true">
+  <Class Name="Blablacar.Infrastructure.Data.Person" Collapsed="true">
     <Position X="1.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAACAAAAAQAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Dto\Abstract\PersonDto.cs</FileName>
+      <FileName>Entities\Abstract\Person.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Blablacar.Infrastructure.Data.CustomerDto" Collapsed="true">
@@ -29,17 +29,17 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Blablacar.Infrastructure.Data.DriverDto" Collapsed="true">
-    <Position X="3" Y="6.75" Width="1.5" />
+    <Position X="7.25" Y="5.25" Width="7" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Dto\DriverDto.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Blablacar.Infrastructure.Data.TripDto" Collapsed="true">
+  <Class Name="Blablacar.Infrastructure.Data.Trip" Collapsed="true">
     <Position X="5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgEAAAAAAAAAAAIAAAAAAAAAAAAIgAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Dto\TripDto.cs</FileName>
+      <HashCode>AgEAAAAAAQAAAAIAAAAAAAAAAAAIgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Trip.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Blablacar.Infrastructure.Data.GenericRepository&lt;T, TDto&gt;" Collapsed="true">
@@ -75,7 +75,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Blablacar.Infrastructure.Data.UnitOfWork" Collapsed="true">
-    <Position X="2.25" Y="4.25" Width="2" />
+    <Position X="4.5" Y="3.75" Width="2" />
     <TypeIdentifier>
       <HashCode>hAMAAAAAACAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UnitOfWork\UnitOfWork.cs</FileName>

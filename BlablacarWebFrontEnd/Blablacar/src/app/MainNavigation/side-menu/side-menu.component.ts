@@ -18,7 +18,7 @@ export class SideMenuComponent implements OnInit {
     //Almost load from config)
     this.menuItems.push({ caption: "Home", iconName: "home.svg", routeLink: "/home" });
     this.menuItems.push({ caption: "Create New Trip", iconName: "plus.svg", onClickEvent: "openCreateTripDialog"});
-    this.menuItems.push({ caption: "Aviable Trips", iconName: "car.svg", routeLink: "/trips" });
+    this.menuItems.push({ caption: "Available Trips", iconName: "car.svg", routeLink: "/trips" });
     this.menuItems.push({ caption: "Booked Trips", iconName: "booked.svg", routeLink: "/home" });
     this.menuItems.push({ caption: "Log Out", iconName: "logout.svg", customClasses: ["logout"], routeLink: "/home" });
   }
