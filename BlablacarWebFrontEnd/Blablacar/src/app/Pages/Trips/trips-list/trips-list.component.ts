@@ -17,9 +17,10 @@ export class TripsListComponent implements OnInit {
   constructor(private tripsService: TripsService) { }
 
   ngOnInit(): void {
-    this.tripsService.getAllTrips().subscribe((data: ITrip[]) => {
-        this.trips = data;
-    });
+    this.trips = this.tripsService.getAllTrips();
+    //this.tripsService.getAllTrips().subscribe((data: ITrip[]) => {
+    //    this.trips = data;
+    //});
   }
 
 }

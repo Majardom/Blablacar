@@ -30,6 +30,7 @@ export class CreateTripDialogComponent implements OnInit {
     const driver = this.drivers.filter(x => x.id == this.selectedDriverId)[0];
     this.trip.driver = driver;
     this.trip.price = parseFloat(this.trip.price.toString());
-    this.tripsService.addTrip(this.trip).subscribe();
+    this.tripsService.addTrip(this.trip)
+    //this.tripsService.addTrip(this.trip).subscribe();
   }
 }
