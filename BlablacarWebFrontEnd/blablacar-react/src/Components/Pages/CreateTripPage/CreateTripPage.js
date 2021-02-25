@@ -8,56 +8,79 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import TripsService from '../../../Services/TripsService';
-
-export default class CreateTripDialogOpener {
-
-}
+import { useDialog } from "../../Dialogs/DialogProvider";
+const { useState } = React;
 
 const CreateTripPage = () => {
-    const [open, setOpen] = React.useState(true);
     const service = new TripsService();
+    const [openDialog, closeDialog] = useDialog();
+
+    const [trip, setState] = useState({
+        from: '',
+        to: ''
+    });
+    
 
     const handleClose = () => {
-       
-        service.addTrip({
+        closeDialog();
+    };
+
+    const createTrip = () => {
+        
+        service.addTrip( {
             id: 0,
             customer: {id: 0,  gender: "Female", name: "Some Customer", phoneNumber: "380934234234"},
             departureTime: new Date().toString(),
             driver: {id: 0,  gender: "Female", name: "Some Driver", phoneNumber: "380934234234"},
-            from: "Kyiv",
-            to: "Lviv",
+            from: trip.from,
+            to: trip.to,
             price: 300
-         });
+         })
 
-        setOpen(false);
-      };
+        closeDialog();
+    }
+
+    const valueChange = (e) => {
+        const value = e.target.value;
+        setState({
+            ...trip,
+            [e.target.name]: value
+        });
+    }
 
     return (
-        <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-            <DialogTitle id="form-dialog-title">Create New Trip</DialogTitle>
-            <DialogContent>
-                <DialogContentText>
-                    To subscribe to this website, please enter your email address here. We will send updates
-                    occasionally.
-                </DialogContentText>
-                <TextField
-                    autoFocus
-                    margin="dense"
-                    id="name"
-                    label="Email Address"
-                    type="email"
-                    fullWidth
-                />
+        <div className="content">
+            <DialogContent className="content">
+                <div className="route">
+                    <TextField autoFocus
+                        margin="dense"
+                        name="from"
+                        label="From"
+                        fullWidth
+                        value={trip.from}
+                        onChange={valueChange}
+                    />
+
+                    <TextField autoFocus
+                        margin="dense"
+                        name="to"
+                        label="To"
+                        fullWidth
+                        value={trip.to}
+                        onChange={valueChange}
+                    />
+                </div>
+
             </DialogContent>
             <DialogActions>
                 <Button onClick={handleClose} color="primary">
                     Cancel
                 </Button>
-                <Button onClick={handleClose} color="primary">
-                    Subscribe
+                <Button onClick={createTrip} color="primary">
+                    Create
                 </Button>
             </DialogActions>
-        </Dialog>
+        </div>
     );
 };
 
