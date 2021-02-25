@@ -1,0 +1,9 @@
+@import "../../../Themes/variables";
+
+.nav-inner-container {
+    display: inline-flex;
+    flex-direction: column;
+    box-shadow: $box-shadow;
+    height: 100%;
+    flex-shrink: 0;
+}
